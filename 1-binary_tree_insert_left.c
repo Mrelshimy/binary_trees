@@ -19,6 +19,7 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 
 	node->n = value;
 	node->left = parent->left;
+	node->right = NULL;
 	node->parent = parent;
 	parent->left = node;
 
