@@ -8,6 +8,8 @@ RM = rm
 
 %: tests/%.c
 	$(CC) $(CFLAGS) *.c $< -o $@.out
+	@ echo "\noutput of running ./$@.out\n****************************"
+	@ ./$@.out
 
 leakcheck: $(N).out
 	valgrind --track-origins=yes --leak-check=full -s ./$<
