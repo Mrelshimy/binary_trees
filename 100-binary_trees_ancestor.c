@@ -12,13 +12,13 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 {
 	binary_tree_t *s, *f = (binary_tree_t *)first;
 
-	while(f)
+	while (f)
 	{
 		s = (binary_tree_t *)second;
-		while(s)
+		while (s)
 		{
 			if (s == f)
-				return s;
+				return (s);
 			s = s->parent;
 		}
 		f = f->parent;
