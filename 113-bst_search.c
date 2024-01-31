@@ -24,7 +24,7 @@ bst_t *bst_search(const bst_t *tree, int value)
 			else
 				search_pointer = search_pointer->left;
 		}
-		
+
 	}
 	return (NULL);
 }
