@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -12,6 +13,7 @@
  * @left: Pointer to the left child node
  * @right: Pointer to the right child node
  */
+
 struct binary_tree_s
 {
 	int n;
@@ -48,6 +50,7 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 
 int bin_tree_height(binary_tree_t *tree);
+int node_value_checker(const binary_tree_t *tree, int min_val, int max_val);
 
 /*Advanced Tasks*/
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
