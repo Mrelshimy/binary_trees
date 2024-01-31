@@ -9,7 +9,7 @@
  */
 
 bst_t *bst_insert(bst_t **tree, int value)
-{	
+{
 	bst_t *new_node = NULL;
 	bst_t *new_node_pointer = NULL;
 
