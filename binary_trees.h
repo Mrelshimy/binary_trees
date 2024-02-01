@@ -51,6 +51,8 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 
 int bin_tree_height(binary_tree_t *tree);
 int node_value_checker(const binary_tree_t *tree, int min_val, int max_val);
+bst_t *two_child_nodes(bst_t *node, bst_t *root);
+bst_t *one_child_nodes(bst_t *search_pointer, bst_t *root);
 
 /*Advanced Tasks*/
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
