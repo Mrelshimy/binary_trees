@@ -5,7 +5,7 @@ int bin_tree_height(binary_tree_t *tree);
 int node_value_checker(const binary_tree_t *tree, int min_val, int max_val);
 
 /**
- * bin_tree_is_avl - check if binary tree is AVL
+ * binary_tree_is_avl - check if binary tree is AVL
  *
  * @tree: pointer to root of the tree to traverse
  * Return: 1 if AVL , 0 if not or tree is NULL
