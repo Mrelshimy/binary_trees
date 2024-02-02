@@ -120,23 +120,3 @@ int is_balanced_avl(const binary_tree_t *tree)
 
 	return (is_balanced_avl(tree->left) && is_balanced_avl(tree->right));
 }
-
-
-/**
- * bin_tree_height - function to calculate binary tree height
- *
- * @tree: pointer to root of the tree
- * Return: tree height
- */
-int bin_tree_height(binary_tree_t *tree)
-{
-	int height_l;
-	int height_r;
-
-	if (!tree)
-		return (-1);
-
-	height_l = 1 + bin_tree_height(tree->left);
-	height_r = 1 + bin_tree_height(tree->right);
-	return (height_l > height_r ? height_l : height_r);
-}
