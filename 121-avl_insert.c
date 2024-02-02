@@ -6,7 +6,7 @@ void avl_insert_bst(avl_t *root, avl_t *node);
 int is_balanced_avl(const binary_tree_t *tree);
 
 /**
- * abl_insert - inserts node to BST
+ * avl_insert - inserts node to BST
  *
  * @tree: pointer to root of the tree to traverse
  * @value: node value
