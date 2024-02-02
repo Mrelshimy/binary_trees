@@ -2,7 +2,7 @@
 
 avl_t *avl_self_balance(avl_t *node);
 int bin_tree_height(binary_tree_t *tree);
-void avl_insert_bst(avl_t *root, avl_t *node);
+avl_t *avl_insert_bst(avl_t *root, avl_t *node);
 int is_balanced_avl(const binary_tree_t *tree);
 
 /**
@@ -25,7 +25,7 @@ avl_t *avl_insert(avl_t **tree, int value)
 		*tree = node;
 		return (node);
 	}
-	avl_insert_bst(*tree, node);
+	node = avl_insert_bst(*tree, node);
 	if (node)
 		*tree = avl_self_balance(node);
 	return (node);
@@ -37,7 +37,7 @@ avl_t *avl_insert(avl_t **tree, int value)
  * @root: pointer to root of the tree to traverse
  * @node: pointer to the node to insert
  */
-void avl_insert_bst(avl_t *root, avl_t *node)
+avl_t *avl_insert_bst(avl_t *root, avl_t *node)
 {
 	if (root->n > node->n)
 	{
@@ -45,9 +45,9 @@ void avl_insert_bst(avl_t *root, avl_t *node)
 		{
 			root->left = node;
 			node->parent = root;
-			return;
+			return node;
 		}
-		avl_insert_bst(root->left, node);
+		return (avl_insert_bst(root->left, node));
 	}
 	if (root->n < node->n)
 	{
@@ -55,10 +55,12 @@ void avl_insert_bst(avl_t *root, avl_t *node)
 		{
 			root->right = node;
 			node->parent = root;
-			return;
+			return node;
 		}
-		avl_insert_bst(root->right, node);
+		return (avl_insert_bst(root->right, node));
 	}
+	free(node);
+	return NULL;
 }
 
 /**
