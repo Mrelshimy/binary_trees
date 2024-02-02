@@ -36,6 +36,7 @@ avl_t *avl_insert(avl_t **tree, int value)
  *
  * @root: pointer to root of the tree to traverse
  * @node: pointer to the node to insert
+ * Return: the node again (if inserted)
  */
 avl_t *avl_insert_bst(avl_t *root, avl_t *node)
 {
@@ -45,7 +46,7 @@ avl_t *avl_insert_bst(avl_t *root, avl_t *node)
 		{
 			root->left = node;
 			node->parent = root;
-			return node;
+			return (node);
 		}
 		return (avl_insert_bst(root->left, node));
 	}
@@ -55,12 +56,12 @@ avl_t *avl_insert_bst(avl_t *root, avl_t *node)
 		{
 			root->right = node;
 			node->parent = root;
-			return node;
+			return (node);
 		}
 		return (avl_insert_bst(root->right, node));
 	}
 	free(node);
-	return NULL;
+	return (NULL);
 }
 
 /**
