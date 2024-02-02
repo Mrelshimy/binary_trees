@@ -9,10 +9,10 @@
  */
 avl_t *array_to_avl(int *array, size_t size)
 {
-	avl_t *root;
+	avl_t *root = NULL;
 	size_t i = 0;
 
-	while (size > i)
+	while (array && size > i)
 		avl_insert(&root, array[i++]);
 	return (root);
 }

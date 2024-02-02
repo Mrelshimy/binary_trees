@@ -18,5 +18,6 @@ int main(void)
     if (!tree)
         return (1);
     binary_tree_print(tree);
+    binary_tree_delete(tree);
     return (0);
 }

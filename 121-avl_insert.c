@@ -26,7 +26,8 @@ avl_t *avl_insert(avl_t **tree, int value)
 		return (node);
 	}
 	avl_insert_bst(*tree, node);
-	*tree = avl_self_balance(node);
+	if (node)
+		*tree = avl_self_balance(node);
 	return (node);
 }
 
@@ -38,7 +39,7 @@ avl_t *avl_insert(avl_t **tree, int value)
  */
 void avl_insert_bst(avl_t *root, avl_t *node)
 {
-	if (root->n >= node->n)
+	if (root->n > node->n)
 	{
 		if (!root->left)
 		{
@@ -48,7 +49,7 @@ void avl_insert_bst(avl_t *root, avl_t *node)
 		}
 		avl_insert_bst(root->left, node);
 	}
-	else
+	if (root->n < node->n)
 	{
 		if (!root->right)
 		{
